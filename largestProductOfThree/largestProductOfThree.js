@@ -7,7 +7,8 @@
  * Extra credit: Make your function handle negative numbers.
  */
 
-
-var largestProductOfThree = function(array) {
-  // TODO: everything
-};
+ var largestProductOfThree = function( array ) {
+    return array.sort( function( a, b ) { return a - b; } ).slice( -3 ).reduce( function (prev, curr) {
+      return prev * curr;
+    });
+  };
