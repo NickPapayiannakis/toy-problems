@@ -10,6 +10,40 @@
  * Extra credit: Extend your function to handle more than two input strings.
  */
 
+
+// combine all strings
+// create an empty hash table
+
+// iterate over characters in string
+  // if character exists in hash table,
+    // set value to true
+  // assign each char to hash table with value false
+
+//iterate over hash table for keys with values === true
+  //push keyname to result array
+
+// return result
+
 var commonCharacters = function(string1, string2) {
-  // TODO: Your code here!
+
+  var args = Array.prototype.slice.call(arguments);
+  var mS = args.join('');
+  var dict = {};
+
+  var find_dups = function(string) {
+    duplicates = [];
+
+    for ( c = 0; c < string.length; c++ ){
+
+      var ch = string.charAt(c);
+      var re = new RegExp(ch,"gi");
+
+      if ( string.match(re).length > 1 && duplicates.indexOf(ch) === -1 ){
+        duplicates.push( string.charAt(c) );
+      }
+    }
+    return duplicates;
+  };
+  
+  return find_dups(mS);
 };
