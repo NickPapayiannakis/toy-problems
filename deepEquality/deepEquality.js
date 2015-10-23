@@ -20,27 +20,18 @@ OVERVIEW
 
   */
 var deepEquals = function(apple, orange){
-var count1 = 0;
-var count2 = 0;
-var obj1 = JSON.stringify(apple);
-var obj2 = JSON.stringify(orange)
+  var count1, count2 = 0;
+  var obj1 = JSON.stringify(apple);
+  var obj2 = JSON.stringify(orange)
 
-for (var i = 0; i < obj1.length; i++){
-  count1 += obj1.charCodeAt(i);
-}
+  for (var i = 0; i < obj1.length; i++){
+    count1 += obj1.charCodeAt(i);
+  }
 
-for (var e = 0; e < obj2.length; e++){
-  count2 += obj2.charCodeAt(e);
-}
+  for (var e = 0; e < obj2.length; e++){
+    count2 += obj2.charCodeAt(e);
+  }
 
-return count1 === count2 ? true : false;
-  // var valueCheck = function(){
-  //   for (var key in object){
-  //     if (apple[key] !== orange[key]){
-  //       return false;
-  //     } else {
-  //       return true;
-  //     }
-  //   }
-  // };
+  return count1 === count2 ? true : false;
+
 };
