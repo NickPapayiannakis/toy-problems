@@ -9,7 +9,38 @@
   * deepEquals({a:1, b: {c:5}},{a:1, b: {c:6}}); // false
   *
   * don't worry about handling cyclical object structures.
-  *
+
+OVERVIEW
+
+1. compare both objects
+2. determine whether each property of both objects is an identical match
+3. if any properties aren't, return false
+4. otherwise return true
+
+
   */
 var deepEquals = function(apple, orange){
+var count1 = 0;
+var count2 = 0;
+var obj1 = JSON.stringify(apple);
+var obj2 = JSON.stringify(orange)
+
+for (var i = 0; i < obj1.length; i++){
+  count1 += obj1.charCodeAt(i);
+}
+
+for (var e = 0; e < obj2.length; e++){
+  count2 += obj2.charCodeAt(e);
+}
+
+return count1 === count2 ? true : false;
+  // var valueCheck = function(){
+  //   for (var key in object){
+  //     if (apple[key] !== orange[key]){
+  //       return false;
+  //     } else {
+  //       return true;
+  //     }
+  //   }
+  // };
 };
