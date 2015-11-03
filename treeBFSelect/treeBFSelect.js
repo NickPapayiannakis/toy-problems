@@ -37,12 +37,29 @@ var Tree = function(value){
 
 
 
-Tree.prototype.BFSelect = function(filter) {
+Tree.prototype.BFSelect = function(filter, node) {
   // return an array of values for which the function filter(value, depth) returns true
-};
+  var r, q, node;
+  q = [node], r = [];
+  node = node || this;
+  while (q.length > 0) {
+      node = q.shift();
+
+      if (filter(node)) {
+          r.push(node);
+      }
+
+      node.children.each(function (child) {
+          q.push(child);
+      });
+  }
+}
+
+  // Recursive case
 
 /**
- * You shouldn't need to change anything below here, but feel free to look.
+ iterate over each node at a specific depth
+ next, iterate over the children of each node
   */
 
 /**

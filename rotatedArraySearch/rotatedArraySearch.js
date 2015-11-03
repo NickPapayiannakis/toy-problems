@@ -15,7 +15,27 @@
  * Target time complexity: O(log(array.length))
  */
 
-var rotatedArraySearch = function (rotated, target) {
-  // Your code here:
-};
+//create an object out of array values
+  //assign index as key, value as element
+//if key exists, return it
+//otherwise, return null
 
+var rotatedArraySearch = function (rotated, target) {
+  var max, min, guess;
+  max = rotated.length - 1 , min = 0;
+
+  do {
+    guess = ~~((min + max) / 2);
+
+    if (rotated[guess] === target) {
+      return rotated[guess];
+    }
+
+    if (rotated[guess] > target) {
+      max = guess + 1;
+    } else {
+      min = guess - 1;
+    }
+
+  } while (rotated[guess] !== target);
+}

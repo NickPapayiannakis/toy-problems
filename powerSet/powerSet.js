@@ -18,4 +18,16 @@
  */
 
 var powerSet = function(str){
+  //create an array to hold result, and insert each character to start
+  var result = [];
+
+  //iterate over each character
+  for (var c = 0; c < str.length; c++) {
+    //for each character, iterate over the rest (beginning at the next character to the right)
+    for (var i = c; i < str.length; i++){
+      
+
+    }
+  }
+
 }
