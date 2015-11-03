@@ -38,17 +38,37 @@
  * evenNumbers.includes(2) should be true, evenNumbers.includes(3) should be false
  */
 
-
 var Range = function(start, end, step) {
+  // create a variable to hold step
+  this.step = step || 1
+  this.step = start < end ? (step * -1) : step;
+
+  this.range = {};
+  this.counter = 0;
+
+
+  //check whether no start value is given
+  if (!start) return null;
+
+  this.range[start] = this.counter;
+  //create the range
+  while (this.counter < end ||  ) {
+    this,range[start + counter] = counter;
+    counter + step;
+  }
+
 };
 
 Range.prototype.size = function () {
+  return Object.keys(this).length;
 };
 
 Range.prototype.each = function (callback) {
+  return Object.keys(this);
 };
 
 Range.prototype.includes = function (val) {
+  return val in this ? true : false;
 };
 
 var range = new Range(1);
