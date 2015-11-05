@@ -24,6 +24,21 @@
  *
  */
 var balancedParens = function(input){
+  var flag, parens;
+
+  falg = true;
+  parens = input.match(/\[|\(|\{|\]|\)|\}/g);
+  console.log(parens);
 };
 
+// check to see whether any parens or brackets have any other parens or brackets on the inside
+
+//set a variable to hold the temporary parens
+//set a flag to true
+//each time a paren is encountered, add it to the an array and set current to current paren
+  //if the current paren's opposite is the last item in the array
+    //pop it
+  //otherwise flagg false
+
+  //return flag
 

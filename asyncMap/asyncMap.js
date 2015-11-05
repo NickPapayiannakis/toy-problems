@@ -35,9 +35,32 @@
  *    console.log(results); // ['one', 'two']
  * });
  *
- *
+ when a function 
  */
 
 
+
 var asyncMap = function(tasks, callback){
+  var results = [];
+
+  var doIt = function(cb) {
+    //call each function in array
+    for (var i = 0; i < tasks.length; i++) {
+      //assign result to result array at same index
+      results[i] = tasks[i].call();
+    }
+  }
+
+  var callIt = function(callback){
+    //iterate over array
+    for (var r = 0; r < results.length; r++) {
+      //call cb over each item
+      callback(results[r]);
+    }
+  }
+
+  doIt(callIt(callback));
+
+  //return results
+  return results;
 };
