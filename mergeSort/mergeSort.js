@@ -93,10 +93,56 @@
  *   the input not into sublists of length 1, but into whatever sublists are already sorted in the input.
  *   Implement natural splitting into your mergesort. How much does it improve your average-case runtime?
  *
+
+
+
+ 1. Be able to split the input into sub arrays
+ 2. find a way to merge two arrays
+ 3. find a way to sort small arrays
+ 4. repeat this process iteritively
  */
 
 
 
 var mergeSort = function(array) {
-  // Your code here.
+  var a = [];
+
+  // Split the input array into sub-arrays
+
+  //iterate over each item in array
+  for ( var i = 0; i < array.length; i++ ) {
+    //slice it out and push it to new array
+    a.push(array.slice(i, i+1));
+
+    console.log(a);
+  }
+
+
+  // make a function to merge two arrays
+  var merge = function (array1, array2) {
+    var m = [];
+    for (var x = 0; x < array1.length; x++){
+
+      if ( array2[x] === undefined ) {
+        return m;
+
+      } else if ( array1[x] < array2[x] ) {
+        m.push(array1[x]);
+        m.push(array2[x]);
+
+      } else {
+        m.push(array2[x]);
+        m.push(array1[x]);
+      }
+    }
+    return m;
+  };
+
+  do {
+    for (var e = 0; e < a.length; e++){
+      
+    }
+
+  } while (a.length !== array.length)
+
 };

@@ -10,10 +10,32 @@
  *
  * Try your function with long, random strings to make sure it handles large
  * inputs well.
+ 1. grab each run
  */
 
 var longestRun = function (string) {
-  // TODO: Your code here!
+  var match, result, c, values, accum, index;
+  match = {}, result = [], values = [], acum = '', c = string.charAt(i);
+
+  // Iterate over input string
+  for ( var i = 0; i < string.length; i++ ) {
+    // Add chars to match
+    match[c] += c;
+  }
+
+  for ( var key in match ) {
+    values.push( match[key] );
+  }
+
+  for ( var g = 0; g < values.length; g++ ){
+    if ( values[g].length > accum.length ) {
+      accum = values[g];
+    }
+  }
+
+  index = /accum/.exec(string).index;
+  result.push(index);
+  result.push(index + accum.length);
 };
 
 // If you need a random string generator, use this!
