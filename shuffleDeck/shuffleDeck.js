@@ -32,7 +32,24 @@
  */
 
 var shuffleDeck = function(deck) {
-  // Your code here
+  //create a variable to hold deck
+  var deck = deck;
+  //create a variable to hold result
+  var result = [];
+  //create  a random number generator
+  var randomIndex = function (array) {
+    return ~~(Math.random() * array.length);
+  }
+  //iterate over deck
+  for (var i = 0; i < deck.length; i++){
+    var index = deck[randomIndex(deck)];
+
+    if (result.indexOf(index))
+      result.push(deck[index]);
+  }
+
+  // return the result
+  return result;
 };
 
 // Ordered deck generator provided for your testing convenience

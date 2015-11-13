@@ -14,6 +14,10 @@
  * translateRomanNumeral("IV") // 4
  *
  * You should return `null` on invalid input.
+
+ 1. find a way to translate numeral characters to their equivalent numbers
+ 2. find a way to determine whether a numeral appear before or after a larger one
+ 3. find a way to determine whether an invalid inout was given
  */
 
 var DIGIT_VALUES = {
@@ -27,6 +31,6 @@ var DIGIT_VALUES = {
 };
 
 var translateRomanNumeral = function(romanNumeral){
-// TODO: Implement me!
+  // check to see whether the input conforms to rules of roman numerals
 
 };
